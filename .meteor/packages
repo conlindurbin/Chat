@@ -9,3 +9,5 @@ preserve-inputs
 less
 bootstrap
 jquery
+accounts-ui
+accounts-google

@@ -4,8 +4,15 @@
 </head>
 
 <body>
+	{{> login}}
+	{{#if loggingIn}}
+		{{addOnline}}
+	{{/if}}
+	{{#if currentUser}}
   {{> chat_frame}}
   {{> chat_input}}
+  {{>online}}
+  {{/if}}
 </body>
 
 <template name="chat_frame">
@@ -17,8 +24,8 @@
 
 </template>
 <template name="message_text">
-<li>
-{{text}}
+<li class='line'>
+<span class='user'>{{name}}</span> {{text}}
 </li>
 </template>
 
@@ -27,4 +34,13 @@
     <input id='chat_in' placeholder="All your chats are belong to us." type='text'/><button class='btn' id='sub'>Say</button>
     </div>
 
+</template>
+<template name="login">
+	{{loginButtons}}
+</template>
+<template name="remove">
+	{{clear}}
+</template>
+<template name="online">
+	{{list}}
 </template>
