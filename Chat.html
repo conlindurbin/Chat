@@ -1,0 +1,26 @@
+<head>
+  <title>Chat</title>
+</head>
+
+<body>
+  {{> chat_frame}}
+  {{> chat_input}}
+</body>
+
+<template name="chat_frame">
+<div id='messages'>
+{{#each message}}
+	{{> message_text}}
+{{/each}}
+</div>
+
+</template>
+<template name="message_text">
+<li>
+{{text}}
+</li>
+</template>
+
+<template name="chat_input">
+<textarea id='chat_in'></textarea><button class='btn' id='sub'>Say</button>
+</template>
